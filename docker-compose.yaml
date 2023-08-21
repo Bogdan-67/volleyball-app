@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:12-alpine
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    ports:
+      - '5433:5432'
+
+  frontend:
+    image: frontend
+    ports:
+      - '80:80'
+      - '443:443'
+
+  api:
+    image: api
+    env_file:
+      - ./backend/api/.env

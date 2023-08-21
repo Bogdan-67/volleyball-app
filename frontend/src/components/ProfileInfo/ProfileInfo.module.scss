@@ -1,0 +1,205 @@
+@import './../../scss/vars';
+
+.root {
+  width: 300px;
+  background: #fff;
+  border-radius: 25px;
+  box-shadow: $tile-shadow;
+
+  &__header {
+    padding: 15px;
+    background: #4099eb;
+    border-radius: 25px 25px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__fio {
+      text-align: center;
+    }
+
+    &__img {
+      width: 130px; /* Задаем размеры контейнера для изображения */
+      height: 130px;
+      position: relative;
+      cursor: pointer;
+      &_small {
+        width: 50px; /* Задаем размеры контейнера для изображения */
+        height: 50px;
+        position: relative;
+        cursor: pointer;
+        img {
+          width: 100%; /* Растягиваем изображение на всю ширину контейнера */
+          height: 100%; /* Автоматически вычисляем высоту, чтобы сохранить пропорции */
+          border-radius: 50%; /* Применяем радиус границы к изображению */
+          object-fit: cover; /* Растягиваем изображение, чтобы оно полностью заполнило круг */
+
+          &:hover {
+            transition: 0.3s;
+            filter: brightness(80%);
+          }
+        }
+      }
+
+      img {
+        width: 100%; /* Растягиваем изображение на всю ширину контейнера */
+        height: 100%; /* Автоматически вычисляем высоту, чтобы сохранить пропорции */
+        border-radius: 50%; /* Применяем радиус границы к изображению */
+        object-fit: cover; /* Растягиваем изображение, чтобы оно полностью заполнило круг */
+
+        &:hover {
+          transition: 0.3s;
+          filter: brightness(80%);
+        }
+      }
+
+      &__editIcon {
+        position: absolute;
+        opacity: 0;
+        bottom: 10px;
+        right: 10px;
+        background: #fff;
+        border-radius: 50%;
+        font-size: 20px;
+        padding: 3px;
+        transition: 0.3s;
+      }
+
+      &__editMenu {
+        background: #fff;
+        padding: 8px 0;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+        &__item {
+          padding: 10px;
+          transition: 0.5s;
+
+          &:hover {
+            background: #e0e0e0;
+          }
+        }
+      }
+    }
+
+    &__fio {
+      color: #fff;
+      text-shadow: 0 4px 19px rgba(0, 0, 0, 0.25);
+      margin-top: 15px;
+    }
+
+    &__roleIcon {
+      margin-right: 5px;
+      svg {
+        margin-bottom: -1px;
+      }
+
+      &_admin {
+        color: #fdc807;
+      }
+
+      &_editor {
+        color: #96dd0a;
+      }
+    }
+  }
+
+  &__info {
+    padding: 20px;
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    &__title {
+      font-weight: 500;
+      margin-bottom: 17px;
+      margin-right: 30px;
+    }
+  }
+  &__button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+
+    &_editBtn {
+      background: #3389c7;
+
+      &:hover {
+        color: #3389c7;
+        border: 1px solid #3389c7;
+      }
+    }
+
+    &_removeRoleBtn {
+      background: #ff7676;
+      margin-top: 5px;
+
+      &:hover {
+        color: #ff7676;
+        background: transparent;
+        border: 1px solid #ff7676;
+      }
+    }
+
+    &_deleteUserBtn {
+      margin-top: 10px;
+      background: transparent;
+      color: #000;
+      box-shadow: none;
+      opacity: 0.3;
+      padding: 0;
+      border: none;
+      font-size: 12px;
+
+      &:hover {
+        background: transparent;
+        color: #000;
+        box-shadow: none;
+        border: none;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+
+  &__header {
+    padding: 15px;
+    background: #4099eb;
+    border-radius: 25px 0px 0 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+  }
+
+  &__info {
+    padding: 20px;
+    width: 100%;
+  }
+}
+
+/* Стили, применяемые, когда устройство использует тап */
+@media (hover: none) {
+  .root {
+    &__editBtn {
+      &:hover {
+        background: #3389c7;
+        border: none;
+        color: #fff;
+      }
+    }
+  }
+}

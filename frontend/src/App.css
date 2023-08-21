@@ -1,0 +1,78 @@
+:root {
+  --inp: #f0f0f0;
+  --main: #137f74;
+  --back: #e8f4ff;
+  --stnd: #474747;
+  --head: #002d4c;
+  --butt: #78c6ff;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--back);
+  color: #000;
+}
+
+h2 {
+  font-size: 20px;
+  font-size: 20px;
+  line-height: 24px;
+}
+input {
+  background-color: var(--inp);
+  width: 25vh;
+  color: #939393;
+  border-radius: 10px;
+  padding: 10px 15px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  font-weight: 400;
+  font-size: 12px;
+
+  transition: all 1s;
+  &:focus,
+  :focus-visible {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.1);
+    outline: -webkit-focus-ring-color auto 0px !important;
+  }
+}
+button {
+  background-color: var(--butt);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 30px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  transition: 0.5s;
+  border: 1px solid rgba($color: #000, $alpha: 0);
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background-color: transparent;
+    border: 1px solid var(--butt);
+    color: var(--butt);
+  }
+}
+
+.container {
+  width: calc(100vw - 100px);
+  margin: 150px auto;
+  max-width: 1400px;
+}
+
+.App {
+  text-align: center;
+}
+.main {
+  margin: 30px 0;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 30px;
+}

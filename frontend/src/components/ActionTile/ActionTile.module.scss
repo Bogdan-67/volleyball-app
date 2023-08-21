@@ -1,0 +1,199 @@
+@import '../../scss/vars';
+
+.actions {
+  margin-top: 30px;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__list {
+    &__empty {
+      text-align: center;
+      font-size: calc((100vw - 480px) / (1280 - 480) * (18 - 12) + 10px);
+      opacity: 0.3;
+      font-weight: 500;
+      padding: 50px 0 20px;
+
+      span {
+        margin-right: 10px;
+      }
+    }
+
+    &__showNum {
+      display: flex;
+      justify-content: right;
+
+      &__item {
+        margin-left: 10px;
+        text-decoration: underline;
+        color: $button-clr;
+        cursor: pointer;
+
+        &_active {
+          text-decoration: none;
+          color: #000;
+          pointer-events: none;
+        }
+      }
+
+      @media screen and (max-width: 1100px) {
+        margin-top: 20px;
+      }
+
+      @media screen and (max-width: 550px) {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    // background: $button-clr;
+    // color: #fff;
+    background: #fff;
+    color: black;
+    border-radius: 15px;
+    padding: 20px 30px;
+    margin-top: 10px;
+    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    &__header {
+      display: flex;
+    }
+
+    span {
+      // background: #fff;
+      // color: $button-clr;
+      background: $button-clr;
+      color: #fff;
+      padding: 3px 10px 5px 10px;
+      border-radius: 15px;
+      margin-left: 15px;
+    }
+
+    &__content {
+      margin-left: 15px;
+    }
+
+    &__status {
+      width: 2px;
+      border-radius: 2px;
+      margin-left: -15px;
+
+      &_win {
+        background: #25f025;
+      }
+      &_loss {
+        background: #ff3232;
+      }
+      &_null {
+        background: #eeee08;
+      }
+    }
+
+    &__player {
+      font-weight: 500;
+      margin-right: 15px;
+    }
+
+    &__actionName {
+      span {
+        margin-left: 0;
+        @include dynamicFontSize(16, 14);
+      }
+    }
+
+    &__time {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #fff;
+      padding: 5px 10px;
+      border-radius: 15px;
+      color: $button-clr;
+      font-size: calc((100vw - 480px) / (1280 - 480) * (18 - 12) + 10px);
+
+      @media screen and (min-width: 1200px) {
+        font-size: 15px;
+      }
+    }
+
+    &__result,
+    &__condition {
+      margin-top: 20px;
+      @include dynamicFontSize(16, 14.5);
+    }
+
+    &__delete {
+      margin-top: 15px;
+      display: inline-block;
+      @include dynamicFontSize(15, 13);
+      font-weight: 500;
+      opacity: 0.3;
+      transition: 0.5s;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.6;
+      }
+
+      @media screen and (min-width: 1200px) {
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      &__header {
+        flex-direction: column;
+
+        span {
+          display: inline-block;
+          margin-left: 0;
+          margin-top: 10px;
+        }
+      }
+
+      &__result {
+        margin-top: 15px;
+        span {
+          margin-left: 5px;
+        }
+      }
+
+      &__condition {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        span {
+          display: inline-block;
+          margin-left: 0;
+          margin-top: 10px;
+        }
+      }
+
+    }
+    @media (max-width: 400px) {
+
+      &__result {
+        margin-top: 10px
+;
+        display: flex;
+    flex-direction: column;
+    span{margin-left: 0px;margin-top: 10px;}
+    
+      }
+      &__condition {
+        margin-top: 10px;}
+    }
+  }
+
+  &__showAll {
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    color: $button-clr;
+  }
+}

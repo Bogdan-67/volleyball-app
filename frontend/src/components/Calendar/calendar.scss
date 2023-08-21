@@ -1,0 +1,216 @@
+.react-calendar {
+  color: black;
+  width: 460px !important ;
+  max-width: 100% !important ;
+  background: white !important ;
+  border: 1px solid rgb(146, 146, 146);
+  padding: 15px;
+  font-family: Arial, Helvetica, sans-serif !important ;
+  line-height: 1.125em !important ;
+
+  &--doubleView {
+    width: 700px !important ;
+  }
+
+  &--doubleView &__viewContainer {
+    display: flex !important ;
+    margin: -0.5em !important ;
+  }
+
+  &--doubleView &__viewContainer > * {
+    width: 50% !important ;
+    margin: 0.5em !important ;
+  }
+
+  button {
+    margin: 0 !important ;
+    border: 0 !important ;
+    outline: none !important ;
+
+    &:enabled:hover {
+      cursor: pointer !important ;
+    }
+  }
+
+  &__navigation {
+    display: flex !important ;
+    height: 44px !important ;
+    margin-bottom: 1em !important ;
+
+    &__arrow {
+      align-items: center;
+      justify-content: center;
+
+      @media (max-width: 1000px) {
+        font-size: calc((100vw - 480px) / (1280 - 480) * (18 - 12) + 12px);
+      }
+    }
+
+    &__label {
+      font-size: calc((100vw - 480px) / (1280 - 480) * (18 - 12) + 8px);
+      padding: 10px 10px;
+
+      &__labelText {
+        margin: auto;
+
+        @media (max-width: 1000px) {
+          font-size: calc((100vw - 480px) / (1280 - 480) * (18 - 12) + 12px);
+        }
+      }
+    }
+
+    button {
+      color: black !important;
+      min-width: 44px !important ;
+      background: none !important ;
+      border-radius: 0px;
+      border: 1px solid rgb(230, 230, 230) !important;
+      box-shadow: none;
+      padding: 5px 5px;
+      text-align: center;
+
+      &:disabled {
+        background-color: #f0f0f0 !important ;
+      }
+
+      &:enabled {
+        &:hover,
+        &:focus {
+          background-color: #e6e6e6 !important ;
+        }
+      }
+    }
+  }
+
+  &__month-view {
+    &__weekdays {
+      text-align: center !important ;
+      text-transform: uppercase !important ;
+      font-weight: bold !important ;
+      font-size: 0.75em !important ;
+
+      &__weekday {
+        padding: 0.5em !important ;
+      }
+    }
+
+    &__weekNumbers {
+      display: flex !important ;
+      align-items: center !important ;
+      justify-content: center !important ;
+      font-size: 0.75em !important ;
+      font-weight: bold !important ;
+    }
+
+    &__days {
+      &__day {
+        &--weekend {
+          color: #d10000 !important ;
+        }
+
+        &--neighboringMonth {
+          color: #757575 !important ;
+        }
+      }
+    }
+  }
+
+  &__tile {
+    display: flex !important ;
+    align-items: center !important ;
+    justify-content: center !important ;
+    font-size: 0.75em !important ;
+    font-weight: bold !important ;
+
+    color: black;
+    max-width: 100% !important ;
+    padding: 10px 6.6667px !important ;
+    background: none !important ;
+    text-align: center !important ;
+    line-height: 16px !important ;
+    // font-size: 4vw;
+    border-radius: 0px;
+
+    abbr {
+      margin: auto;
+    }
+
+    &:disabled {
+      background-color: #f0f0f0 !important ;
+      opacity: 0.5;
+    }
+
+    &:enabled {
+      &:hover,
+      &:focus {
+        background-color: #e6e6e6 !important ;
+      }
+    }
+
+    &--now {
+      background: #b6e0ff !important ;
+      color: #000;
+
+      &:enabled {
+        &:hover,
+        &:focus {
+          background: #fff !important ;
+          color: #78c6ff;
+        }
+      }
+    }
+
+    &--hasActive {
+      background: #76baff !important ;
+
+      &:enabled {
+        &:hover,
+        &:focus {
+          background: #a9d4ff !important ;
+        }
+      }
+    }
+
+    &--active {
+      background: #006edc !important ;
+      color: white !important ;
+
+      &:enabled {
+        &:hover,
+        &:focus {
+          background: #1087ff !important ;
+        }
+      }
+    }
+
+    @media (min-width: 860px) {
+      font-size: calc((100vw - 480px) / (1280 - 480) * (18 - 12) + 8px);
+    }
+
+    @media (min-width: 520px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 519) {
+    }
+  }
+
+  &__year-view &__tile,
+  &__decade-view &__tile,
+  &__century-view &__tile {
+    padding: 2em 0.5em !important ;
+  }
+
+  &--selectRange &__tile--hover {
+    background-color: #e6e6e6 !important ;
+  }
+}
+
+.react-calendar,
+.react-calendar *,
+.react-calendar *:before,
+.react-calendar *:after {
+  -moz-box-sizing: border-box !important ;
+  -webkit-box-sizing: border-box !important ;
+  box-sizing: border-box !important ;
+}

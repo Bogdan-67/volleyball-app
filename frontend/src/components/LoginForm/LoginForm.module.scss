@@ -1,0 +1,246 @@
+@import '../../scss/vars';
+
+.checkIcon {
+  position: absolute;
+  top: 16px;
+  right: -25px;
+  font-size: 17px;
+
+  &_false {
+    color: red;
+  }
+
+  &_true {
+    color: #18e700;
+  }
+}
+.relative {
+  position: relative;
+  @media (min-width: 1400px) {
+    margin-top: 150px;
+  }
+}
+.auth {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  @media (min-width: 1000px) {
+    padding: 35px;
+    &__title {
+      color: $head-clr;
+      margin: 10px auto 10px;
+    }
+  }
+  @media (min-width: 600px) {
+    margin: 0 100px;
+  }
+  @media (min-width: 900px) {
+    margin: 0 200px;
+    &__title {
+      color: $head-clr;
+      margin: 15px auto 15px;
+    }
+  }
+  @media (min-width: 1300px) {
+    margin: 0 auto;
+    &__title {
+      color: $head-clr;
+      margin: 15px auto 15px;
+    }
+  }
+  @media (min-width: 1400px) {
+    margin: -50px 44px 0;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Стили, применяемые, когда устройство использует тап */
+  @media (hover: none) {
+    &__button {
+      &:hover {
+        background-color: $button-clr;
+        border: none;
+        color: #fff;
+      }
+    }
+  }
+  &__2 {
+    position: relative;
+    z-index: 0;
+    @media (min-width: 1400px) {
+      display: flex;
+      margin: 0 auto;
+      margin-top: 200px;
+
+      border-radius: 30px;
+      height: 500px;
+      width: 1200px;
+      background-color: #d1e9ff;
+
+      &_button {
+        font-size: 18px;
+        margin-top: 30px;
+        padding: 18px 35px;
+        color: #000;
+        background-color: transparent;
+        border-radius: 15px;
+        border: 1px #000 solid;
+        cursor: pointer;
+        transition: all ease 0.2s;
+
+        &:hover {
+          cursor: pointer;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      @media (max-height: 850px) {
+        margin-top: 150px;
+      }
+
+      &::after,
+      &::before {
+        content: '';
+        right: 0;
+        top: 0;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 320px 300px;
+        z-index: -1;
+      }
+
+      &::after {
+        border-color: transparent transparent transparent rgba(73, 182, 243, 0.15);
+        transform: rotate(250deg);
+        right: 350px;
+        top: 150px;
+      }
+
+      &::before {
+        transform: rotate(231deg);
+        border-width: 0 0 420px 400px;
+        border-color: transparent transparent transparent rgba(13, 105, 214, 0.36);
+        right: 350px;
+        top: -150px;
+      }
+    }
+  }
+  &__forinput {
+    margin: 6px auto;
+    position: relative;
+    width: 80%;
+    color: red;
+    div {
+      font-size: 10px;
+      text-align: start;
+      margin-left: 10px;
+      margin-top: 5px;
+    }
+  }
+  &__logo {
+    display: none;
+    margin: 0 auto;
+    width: calc((100vw - 480px) / (1280 - 480) * (100 - 44) + 44px);
+    @media (min-width: 1400px) {
+      & {
+        display: block;
+      }
+    }
+  }
+  &__title {
+    color: $head-clr;
+    margin: 5px auto 5px;
+  }
+  &__inputs {
+    display: flex;
+    margin: 10px 0px;
+    flex-direction: column;
+    transition: 0.5s all;
+  }
+  &__input {
+    color: #939393;
+    @media (min-width: 1400px) {
+      padding: 20px 20px;
+    }
+  }
+  &__for-input {
+    margin-top: 10px;
+  }
+  &__button {
+    margin: 10px auto 0;
+    width: 80%;
+    text-align: center;
+    justify-content: center;
+    background-color: $button-clr;
+    border: none;
+    border-radius: calc((100vw - 480px) / (1280 - 480) * (16 - 10) + 10px);
+    padding: 10px 10px;
+    color: #fff;
+    font-size: calc((100vw - 480px) / (1280 - 480) * (16 - 10) + 10px);
+    font-weight: 600;
+    transition: 0.5s;
+    border: 1px solid rgba($color: #000, $alpha: 0);
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    @media (min-width: 1400px) {
+      padding: 20px 30px;
+    }
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid $button-clr;
+      color: $button-clr;
+      svg {
+        -webkit-filter: invert(100%);
+        filter: invert(100%);
+      }
+    }
+
+    &_disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+  &__text {
+    display: none;
+    @media (max-width: 1399px) {
+      display: flex;
+      align-items: center;
+      font-weight: 400;
+      font-size: calc((100vw - 480px) / (1280 - 480) * (16 - 12) + 12px);
+      margin: $mh-auto;
+      color: #cecece;
+    }
+  }
+  &__text_2 {
+    flex-direction: column;
+    align-items: center;
+    font-weight: 400;
+    display: none;
+    @media (min-width: 1400px) {
+      display: flex;
+      font-size: 22px;
+      margin: auto 120px;
+      color: #000;
+    }
+  }
+  &__link {
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 400;
+    color: $button-clr;
+  }
+}
+
+@media (min-height: 750px) {
+  .container {
+    margin-top: 70%;
+  }
+}

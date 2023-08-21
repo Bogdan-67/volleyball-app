@@ -1,0 +1,142 @@
+@import '../../scss/vars';
+
+.plrContainer {
+  width: calc(100vw - 70%);
+  margin: auto;
+  text-align: center;
+}
+
+.train {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 30px;
+  &__team {
+    position: relative;
+
+    &_notValid,
+    &_notValid:focus {
+      // background: #ffbfbf;
+      border: 1px solid rgb(255, 122, 122);
+    }
+
+    span {
+      position: absolute;
+      top: -20px;
+      left: 5px;
+      color: red;
+      font-size: 13px;
+      // font-size: calc((100vw - 480px) / (1280 - 480) * (32 - 16) + 0px);
+    }
+  }
+
+  &__checkIcon {
+    position: absolute;
+    top: 18px;
+    right: -25px;
+    font-size: 17px;
+    // font-size: calc((100vw - 480px) / (1280 - 480) * (32 - 16) + 5px);
+
+    &_false {
+      color: red;
+    }
+
+    &_true {
+      color: #1aff00;
+    }
+  }
+
+  &__elem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    p {
+      margin-right: 5px;
+    }
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: 80px;
+    font-size: calc((100vw - 480px) / (1280 - 480) * (32 - 16) + 16px);
+  }
+  &__player {
+    background: $button-clr;
+    color: #fff;
+    padding: 10px 15px;
+    position: relative;
+    display: inline-block;
+    border-radius: 20px;
+    font-weight: 500;
+    margin-right: 10px;
+    margin-bottom: 8px;
+
+    span {
+      margin-left: 10px;
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+  &__create {
+    display: block;
+    margin: auto;
+
+    &_notValid {
+      pointer-events: none;
+      opacity: 0.6;
+    }
+  }
+  label {
+    margin-right: 15px;
+    font-size: calc((100vw - 480px) / (1280 - 480) * (18 - 12) + 12px);
+  }
+  input {
+    width: 300px;
+    font-size: calc((100vw - 480px) / (1280 - 480) * (17 - 11) + 11px);
+  }
+  .button__add {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 560px) {
+  .train {
+    &__title {
+      font-size: 25px;
+      margin-bottom: 30px;
+    }
+
+    &__elem {
+      flex-direction: column;
+
+      input {
+        font-size: 16px;
+      }
+
+      p {
+        margin-bottom: 7px;
+      }
+    }
+
+    &__team {
+      span {
+        top: auto;
+        bottom: -20px;
+      }
+    }
+  }
+}
+
+/* Стили, применяемые, когда устройство использует тап */
+@media (hover: none) {
+  .train {
+    &__create {
+      &:hover {
+        background-color: $button-clr;
+        border: none;
+        color: #fff;
+      }
+    }
+  }
+}

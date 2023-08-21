@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  # Контейнер с backend
+  # api:
+  #   build:
+  #     context: ./api
+  #     target: dev
+  #   tty: true
+  #   working_dir: /opt/server
+  #   volumes:
+  #     - ./api:/opt/server
+  #     - ./static:/opt/static
+  #   env_file:
+  #     - .env
+  #   expose:
+  #     - '5000'
+  #   ports:
+  #     - '5000:5000'
+  #   depends_on:
+  #     - db
+  #   command: sh -c "npm i && npm run dev"
+  #   restart: on-failure
+
+  # Контейнер с базой данных
+  db:
+    container_name: db
+    image: postgres:12-alpine
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    expose:
+      - '5431:5432'

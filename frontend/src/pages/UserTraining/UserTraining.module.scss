@@ -1,0 +1,90 @@
+@import '../../scss/vars';
+
+.train {
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 30px;
+  position: relative;
+
+  &__backBtn {
+    margin-left: 0;
+  }
+
+  &__title,
+  &__team {
+    text-align: center;
+    @include dynamicFontSize(30, 22);
+    font-weight: 500;
+    margin-top: 10px;
+  }
+
+  &__stat {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+
+    > div {
+      margin-top: 20px;
+    }
+
+    &__tile {
+      margin-bottom: 20px;
+    }
+  }
+  @media screen and (max-width: 2000px) {
+    &__stat {
+      width: 80%;
+    }
+  }
+  @media screen and (max-width: 1800px) {
+    &__stat {
+      width: 70%;
+    }
+  }
+}
+
+.actions {
+  &__title {
+    text-align: center;
+    @include dynamicFontSize(28, 22);
+    font-weight: 500;
+    margin-top: 30px;
+  }
+
+  &__showNum {
+    display: flex;
+    justify-content: right;
+
+    &__item {
+      margin-left: 10px;
+      text-decoration: underline;
+      color: $button-clr;
+      cursor: pointer;
+
+      &_active {
+        text-decoration: none;
+        color: #000;
+        pointer-events: none;
+      }
+    }
+
+    @media screen and (max-width: 1100px) {
+      margin-top: 20px;
+    }
+
+    @media screen and (max-width: 550px) {
+      justify-content: center;
+    }
+  }
+
+  &__showAll {
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    color: $button-clr;
+  }
+}

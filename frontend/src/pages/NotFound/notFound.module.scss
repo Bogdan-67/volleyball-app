@@ -1,0 +1,25 @@
+.notFound {
+  margin: 30px 0;
+  padding: 110px 30px 130px 30px;
+  background-color: #fff;
+  border-radius: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__error {
+    text-align: center;
+    font-size: calc((100vw - 480px) / (1280 - 480) * (18 - 12) + 20px);
+
+    span {
+      margin-right: 10px;
+    }
+  }
+
+  &__404 {
+    font-size: 10vw;
+    opacity: 0.2;
+    font-family: serif;
+    margin: auto;
+  }
+}

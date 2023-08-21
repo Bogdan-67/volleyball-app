@@ -1,0 +1,58 @@
+@import '../../scss/vars';
+
+
+.tile {
+  background: #fff;
+  display: flex;
+  width: calc(100vw / 5.75);
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+  cursor: pointer;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  &__info {
+    margin-left: 30px;
+
+    &__text {
+      font-weight: 500;
+      @include dynamicFontSize(20, 16);
+    }
+
+    &__expand {
+      &__count {
+        font-weight: 500;
+        font-size: 12px;
+      }
+    }
+  }
+
+  @media (max-width: 1300px) {
+    width: 48%;
+  }
+
+  @media (max-width: 760px) {
+    margin-top: 20px;
+    width: 47%;
+    &__info {
+      margin-left: 20px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-left: 0;
+      margin-bottom: 20px;
+    }
+  }
+}

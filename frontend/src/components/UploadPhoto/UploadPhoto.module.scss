@@ -1,0 +1,16 @@
+.root {
+  &__title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__error {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #ff00001e;
+    border-radius: 10px;
+    color: #9b0101;
+    border: 1px solid #9b0101;
+  }
+}

@@ -1,0 +1,170 @@
+@import '../../scss/vars';
+
+.checkIcon {
+  position: absolute;
+  top: 16px;
+  right: -25px;
+  font-size: 17px;
+
+  &_false {
+    color: red;
+  }
+
+  &_true {
+    color: #18e700;
+  }
+}
+
+.auth {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: $tile-shadow;
+
+  &__forinput {
+    margin: 6px auto;
+    position: relative;
+    width: 80%;
+    color: red;
+    div {
+      font-size: 10px;
+      text-align: start;
+      margin-left: 10px;
+      margin-top: 5px;
+    }
+  }
+  &__logo {
+    margin: 0 auto;
+    width: calc((100vw - 480px) / (1280 - 480) * (80 - 44) + 44px);
+  }
+  &__title {
+    color: $head-clr;
+    margin: 5px auto 5px;
+  }
+  &__inputs {
+    display: flex;
+    margin: 10px 0px;
+    flex-direction: column;
+    transition: 0.5s all;
+  }
+  &__input {
+    color: #939393;
+  }
+  &__for-input {
+    margin-top: 10px;
+  }
+  &__button {
+    margin: 10px auto 0;
+    width: 80%;
+    text-align: center;
+    justify-content: center;
+    background-color: $button-clr;
+    border: none;
+    border-radius: calc((100vw - 480px) / (1280 - 480) * (16 - 10) + 10px);
+    padding: 10px 30px;
+    color: #fff;
+    font-size: calc((100vw - 480px) / (1280 - 480) * (18 - 10) + 10px);
+    font-weight: 600;
+    transition: 0.5s;
+    border: 1px solid rgba($color: #000, $alpha: 0);
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid $button-clr;
+      color: $button-clr;
+      svg {
+        -webkit-filter: invert(100%);
+        filter: invert(100%);
+      }
+    }
+
+    &_disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+  &__text {
+    font-weight: 400;
+    font-size: calc((100vw - 480px) / (1280 - 480) * (16 - 10) + 10px);
+    margin: $mh-auto;
+    color: #cecece;
+  }
+  &__link {
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 400;
+    color: $button-clr;
+  }
+}
+
+@media (min-height: 750px) {
+  .container {
+    margin-top: 70%;
+  }
+}
+@media (min-height: 600px) {
+  .auth {
+  }
+}
+@media (min-height: 700px) {
+  .auth {
+  }
+}
+@media (min-width: 1000px) {
+  .auth {
+    padding: 35px;
+    &__title {
+      color: $head-clr;
+      margin: 10px auto 10px;
+    }
+  }
+}
+@media (min-width: 600px) {
+  @media (min-width: 600px) {
+    .auth {
+      margin: 0 100px;
+    }
+  }
+}
+@media (min-width: 900px) {
+  .auth {
+    margin: 0 150px;
+    &__title {
+      color: $head-clr;
+      margin: 15px auto 15px;
+    }
+  }
+}
+@media (min-width: 1300px) {
+  .auth {
+    margin: 10px 300px;
+  }
+}
+@media (max-width: 1300px) {
+  .auth {
+    &__logo {
+      display: none;
+    }
+    &__title {
+      color: $head-clr;
+      margin: 15px auto 15px;
+    }
+  }
+}
+
+/* Стили, применяемые, когда устройство использует тап */
+@media (hover: none) {
+  .auth {
+    &__button {
+      &:hover {
+        background-color: $button-clr;
+        border: none;
+        color: #fff;
+      }
+    }
+  }
+}

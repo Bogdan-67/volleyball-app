@@ -1,0 +1,69 @@
+@import '../../scss/vars';
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+
+  &__page {
+    margin-left: 3px;
+    transition: all;
+
+    a {
+      display: flex;
+      color: $button-clr;
+      font-weight: 500;
+      background: transparent;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s;
+
+      &:hover {
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    &_active {
+      a {
+        background: $button-clr;
+        color: #fff;
+        pointer-events: none;
+
+        :hover {
+          box-shadow: none;
+        }
+      }
+    }
+
+    &_disabled {
+      display: none;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+
+    a {
+      color: $button-clr;
+      font-weight: 500;
+    }
+
+    &_next {
+      margin-left: 5px;
+    }
+
+    &_previous {
+      margin-right: 4px;
+    }
+
+    &_disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+}

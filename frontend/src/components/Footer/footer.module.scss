@@ -1,0 +1,89 @@
+@import '../../scss/vars';
+
+.footer {
+  margin-top: auto;
+  background: #466b91;
+  bottom: 0px;
+  width: 100%;
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+  }
+  &__block {
+    text-align: left;
+    flex-basis: calc(50% - 200px);
+  }
+  &__teacher {
+    flex-basis: 400px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  &__dev {
+    text-align: right;
+    flex-basis: calc(50% - 200px);
+  }
+
+  &__title {
+    color: #e3e3e3;
+    @include dynamicFontSize(15, 12);
+  }
+
+  &__blockText {
+    display: flex;
+    flex-direction: column;
+  }
+  &__text {
+    color: #e3e3e3;
+    @include dynamicFontSize(13, 11);
+    a {
+      color: inherit;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__block,
+    &__dev {
+      flex-basis: 100%;
+    }
+
+    &__teacher {
+      flex-basis: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__body {
+      flex-direction: column;
+      padding: 20px;
+    }
+    &__block, &__teacher, &__dev {
+      text-align: center;
+      padding: 10px;
+    }
+    &__title {
+      font-size: 18px;
+    }
+    &__text {
+      font-size: 16px;
+    }
+  }
+}
+
+
+.container {
+  width: calc(100vw - 250px);
+  margin: 0 auto;
+  max-width: 1400px;
+  justify-content: space-between;
+}
+
+.teams {
+  font-size: 20px;
+  font-weight: 500;
+  color: #002d4c;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,136 @@
+@import '../../scss/vars';
+
+.accordion {
+  margin-top: 20px;
+
+  &__item {
+    font-size: 30px;
+    margin-bottom: 20px;
+    background-color: #78c6ff;
+    padding: 25px;
+    border-radius: 20px;
+  }
+  &__title {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__content {
+    margin-top: 12px;
+    color: #fff;
+    font-size: 24px;
+
+    &_list {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: calc(100vw * 0.03);
+
+      &_text {
+        width: calc(100vw * 0.147);
+      }
+    }
+    &_rez {
+      margin-left: 10px;
+      background-color: #fff;
+      color: #78c6ff;
+      border-radius: 20px;
+      padding: 6px 23px 6px 23px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__button {
+    font-size: calc(100vw * 0.035);
+    font-weight: 500;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  &__deleteButton {
+    background: transparent;
+    padding: 0;
+    margin-top: 15px;
+    color: #000;
+    opacity: 0.4;
+    box-shadow: none;
+    font-size: calc(100vw * 0.025);
+
+    &:hover {
+      background: transparent;
+      color: #000;
+      box-shadow: none;
+    }
+  }
+}
+
+.example-container {
+  width: 320px;
+  padding: 20px;
+}
+
+.refresh {
+  padding: 10px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.content-placeholder {
+  padding: 20px;
+  transform-origin: top center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.accordion-header {
+  background: $button-clr;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 20px;
+  font-size: calc(100vw * 0.04);
+}
+
+.paragraph {
+  margin-bottom: 20px;
+}
+
+.accordion-section {
+  overflow: hidden;
+  background: #dcf1ff;
+  border-radius: 10px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+  .content-placeholder {
+    padding-left: 20px;
+  }
+
+  .header .word {
+    height: 30px;
+  }
+
+  .word {
+    height: 14px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+  }
+
+  .paragraph {
+    margin-bottom: 20px;
+  }
+}
