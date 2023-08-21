@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  # Контейнер с frontend
+  client:
+    container_name: client
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    tty: true
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - /app/node_modules/
+    env_file:
+      - .env
+
+  # Контейнер с nginx
+  nginx:
+    container_name: proxy_nginx
+    depends_on:
+      - client
+    image: nginx:latest
+    ports:
+      - '80:80'
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./static:/usr/share/nginx/html
+    restart: always
